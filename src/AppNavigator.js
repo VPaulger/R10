@@ -1,6 +1,6 @@
 import React from 'react'
 import { createBottomTabNavigator } from "react-navigation";
-// import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Schedule from './Schedule'
 import Map from './Map'
@@ -13,42 +13,42 @@ const AppNavigator = createBottomTabNavigator(
     Schedule: {
       screen: Schedule,
       path: '/',
-      // navigationOptions: {
-      //     tabBarIcon: ({ focused, tintColor }) => {
-      //         const iconName = `home${focused ? '' : ''}`;
-      //         return <Icon name={iconName} size={25} color={tintColor} />;
-      //     },
-      // },
+      navigationOptions: {
+          tabBarIcon: ({ focused, tintColor }) => {
+              const iconName = `calendar${focused ? '' : ''}`;
+              return <Icon name={iconName} size={25} color={tintColor} />;
+          },
+      },
     },
     Map: {
       screen: Map,
       path: '/',
-      // navigationOptions: {
-      //     tabBarIcon: ({ focused, tintColor }) => {
-      //         const iconName = `home${focused ? '' : ''}`;
-      //         return <Icon name={iconName} size={25} color={tintColor} />;
-      //     },
-      // },
+      navigationOptions: {
+          tabBarIcon: ({ focused, tintColor }) => {
+              const iconName = `map${focused ? '' : ''}`;
+              return <Icon name={iconName} size={25} color={tintColor} />;
+          },
+      },
     },
     Faves: {
       screen: Faves,
       path: '/',
-      // navigationOptions: {
-      //     tabBarIcon: ({ focused, tintColor }) => {
-      //         const iconName = `home${focused ? '' : ''}`;
-      //         return <Icon name={iconName} size={25} color={tintColor} />;
-      //     },
-      // },
+      navigationOptions: {
+          tabBarIcon: ({ focused, tintColor }) => {
+              const iconName = `heart${focused ? '' : ''}`;
+              return <Icon name={iconName} size={25} color={tintColor} />;
+          },
+      },
     },
     About: {
       screen: About,
       path: '/',
-      // navigationOptions: {
-      //     tabBarIcon: ({ focused, tintColor }) => {
-      //         const iconName = `question-circle${focused ? '' : ''}`;
-      //         return <Icon name={iconName} size={25} color={tintColor} />;
-      //     },
-      // },
+      navigationOptions: {
+          tabBarIcon: ({ focused, tintColor }) => {
+              const iconName = `info-circle${focused ? '' : ''}`;
+              return <Icon name={iconName} size={25} color={tintColor} />;
+          },
+      },
     },
   },
   {
