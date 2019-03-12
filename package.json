@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "reset": "yarn && react-native link"
   },
   "dependencies": {
     "apollo-boost": "^0.3.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
+    "moment": "^2.24.0",
     "react": "16.6.3",
     "react-apollo": "^2.5.2",
     "react-native": "0.58.6",
@@ -27,5 +29,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }
