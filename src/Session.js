@@ -49,7 +49,7 @@ class Session extends Component {
               )
             }
             return (
-                <View>                                
+                <View style={styles.session}>                                
                     {console.log("data: ", data)}
                     {console.log("loading status: ", loading)}
                     {console.log("data.Session: ", data.Session)}
@@ -82,6 +82,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    fontFamily: "Montserrat-Regular",
+  },
+  session: {
+    fontFamily: "Montserrat-Regular",
   },
   starttime: {
     color: 'red',
