@@ -12,6 +12,7 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <AppContainer/>
+      dummy text
     </ApolloProvider>
   )
 }
