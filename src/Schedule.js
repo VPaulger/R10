@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, View, Button} from 'react-native'
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
@@ -9,9 +9,19 @@ class Schedule extends Component {
     super(props);
   }
 
+  static navigationOptions = {
+    title: 'Schedule',
+  };
+
+
   render() {
+    const {navigate} = this.props.navigation;
     return (
-      <View style={styles.container}>  
+      <View style={styles.container}>
+        <Button 
+          title="Go to the session page"
+          onPress={() => navigate('SessionPage')}
+        />
         <Query query={GET_SESSIONS}>
           {({ loading, data }) => {
             return (
