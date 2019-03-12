@@ -1,15 +1,18 @@
 import React from 'react';
-import { createAppContainer } from "react-navigation";
-import ApolloClient from 'apollo-boost';
+import { createAppContainer } from 'react-navigation'
+import { ApolloProvider } from 'react-apollo'
 
+import client from './src/config/Api'
 import AppNavigator from './src/AppNavigator'
 
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator)
 
 
 const App = () => {
   return (
-    <AppContainer/>
+    <ApolloProvider client={client}>
+      <AppContainer/>
+    </ApolloProvider>
   )
 }
 
