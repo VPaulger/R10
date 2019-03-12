@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 
 class Schedule extends Component {
   constructor(props) {
@@ -11,23 +10,31 @@ class Schedule extends Component {
 
   render() {
     return (
-      <View style={styles.container}>  
+      <View style={styles.container}>
         <Query query={GET_SESSIONS}>
           {({ loading, data }) => {
+            if (loading || !data) return <Text>LOADING....</Text>;
             return (
-              <View>              
-                {console.log(data)}
+              <View>
+                {console.log("DATA>>>", data.allSessions[0])}
+                {data.allSessions.map(session => {
+                  return (
+                    <View key={session.id}>
+                      <Text>{session.title} </Text>
+                      <Text>{session.location}</Text>
+                    </View>
+                  );
+                })}
               </View>
-            )
+            );
           }}
         </Query>
       </View>
-    )
+    );
   }
 }
 
-export default Schedule
-
+export default Schedule;
 
 const GET_SESSIONS = gql`
   query {
@@ -47,8 +54,8 @@ const GET_SESSIONS = gql`
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-})
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
+  }
+});
