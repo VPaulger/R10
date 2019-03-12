@@ -4,7 +4,7 @@ import { createStackNavigator } from "react-navigation";
 import Schedule from './Schedule';
 import Session from './Session';
 
-const StackNavigator = createStackNavigator({
+const ScheduleStack = createStackNavigator({
     MainPage: Schedule,
     SessionPage: Session,
   },{
@@ -15,4 +15,4 @@ const StackNavigator = createStackNavigator({
     
   });
 
-export default StackNavigator
+export default ScheduleStack
