@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {StyleSheet, Text, View} from 'react-native'
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 
 
 class Schedule extends Component {
@@ -9,9 +11,16 @@ class Schedule extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Schedule</Text>
-        <Text>This is the schedule page :)</Text>
+      <View style={styles.container}>  
+        <Query query={GET_SESSIONS}>
+          {({ loading, data }) => {
+            return (
+              <View>              
+                {console.log(data)}
+              </View>
+            )
+          }}
+        </Query>
       </View>
     )
   }
@@ -19,6 +28,21 @@ class Schedule extends Component {
 
 export default Schedule
 
+
+const GET_SESSIONS = gql`
+  query {
+    allSessions(orderBy: startTime_ASC) {
+      id
+      title
+      startTime
+      location
+      description
+      speaker {
+        id
+      }
+    }
+  }
+`;
 
 const styles = StyleSheet.create({
   container: {
