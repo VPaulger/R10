@@ -6024,11 +6024,7 @@ ts-invariant@^0.2.1:
   dependencies:
     tslib "^1.9.3"
 
-<<<<<<< Updated upstream
 ts-invariant@^0.3.0, ts-invariant@^0.3.2:
-=======
-ts-invariant@^0.3.2:
->>>>>>> Stashed changes
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.3.2.tgz#89a2ffeb70879b777258df1df1c59383c35209b0"
   integrity sha512-QsY8BCaRnHiB5T6iE4DPlJMAKEG3gzMiUco9FEt1jUXQf0XP6zi0idT0i0rMTu8A326JqNSDsmlkA9dRSh1TRg==
