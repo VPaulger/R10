@@ -25,7 +25,7 @@ class Map extends Component {
           style={{ width: "100%", height: "100%" }}
         >
           <Marker coordinate={{ latitude: 43.644058, longitude: -79.386726 }}
-            image={require('../images/map_pin.png')}
+            image={require('../assets/images/map_pin.png')}
             />
         </MapView>
       </View>

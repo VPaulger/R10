@@ -6,6 +6,8 @@ import Schedule from './Schedule'
 import Map from './Map'
 import Faves from './Faves'
 import About from './About'
+import ScheduleStack from './ScheduleStack';
+
 
 const TabBarComponent = (props) => (<BottomTabBar {...props} />);
 
@@ -13,7 +15,7 @@ const TabBarComponent = (props) => (<BottomTabBar {...props} />);
 const AppNavigator = createBottomTabNavigator(
   {
     Schedule: {
-      screen: Schedule,
+      screen: ScheduleStack,
       path: '/',
       navigationOptions: {
           tabBarIcon: ({ focused, tintColor }) => {
