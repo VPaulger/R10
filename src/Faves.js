@@ -12,7 +12,7 @@ class Faves extends Component {
       <View style={styles.container}>
         <Text>Faves</Text>
         <Text>This is the faves page :)</Text>
-        <FavouriteIcon />
+        <FavouriteIcon id="cjh2j37mo163p01221qpcklry" />
       </View>
     );
   }
