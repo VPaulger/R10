@@ -50,7 +50,7 @@ export default class FavouriteIcon extends Component {
 
   displayIcon() {
     if (this.state.isFav) {
-      return <Icon name="heart" size={25} />;
+      return <Icon name="heart" size={25} color="red" />;
     } else {
       return <Icon name="heart-o" size={25} />;
     }
