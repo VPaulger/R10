@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
-
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import FavouriteIcon from './FavouriteIcon';
 
 class Faves extends Component {
   constructor(props) {
@@ -12,13 +12,13 @@ class Faves extends Component {
       <View style={styles.container}>
         <Text>Faves</Text>
         <Text>This is the faves page :)</Text>
+        <FavouriteIcon />
       </View>
-    )
+    );
   }
 }
 
-export default Faves
-
+export default Faves;
 
 const styles = StyleSheet.create({
   container: {
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-})
+});
