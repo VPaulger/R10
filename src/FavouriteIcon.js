@@ -13,7 +13,7 @@ export default class FavouriteIcon extends Component {
     super(props);
     this.state = {
       isFav: false,
-      id: 'cjh2j37mo163p01221qpcklry',
+      id: this.props.id,
     };
   }
   async toggleFav(id) {
