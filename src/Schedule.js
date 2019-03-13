@@ -18,26 +18,36 @@ class Schedule extends Component {
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
+
         <Button 
           title="Go to the session page"
           onPress={() => navigate('SessionPage')}
         />
+
         <Query query={GET_SESSIONS}>
           {({ loading, data }) => {
+            if (loading || !data) return <Text>LOADING....</Text>;
             return (
-              <View>              
-                {console.log(data)}
+              <View>
+                {console.log("DATA>>>", data.allSessions[0])}
+                {data.allSessions.map(session => {
+                  return (
+                    <View key={session.id}>
+                      <Text>{session.title} </Text>
+                      <Text>{session.location}</Text>
+                    </View>
+                  );
+                })}
               </View>
-            )
+            );
           }}
         </Query>
       </View>
-    )
+    );
   }
 }
 
-export default Schedule
-
+export default Schedule;
 
 const GET_SESSIONS = gql`
   query {
@@ -57,8 +67,8 @@ const GET_SESSIONS = gql`
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-})
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
+  }
+});
