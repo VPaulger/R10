@@ -68,7 +68,6 @@
 		C4F4A46B60EC40A986C72D80 /* r10_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E99A20A45FD0402A93E4E0EA /* r10_logo.png */; };
 		5DEF305CAB2245B58286B726 /* r10_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6C51D97C0724B5AA195A6D0 /* r10_logo@2x.png */; };
 		23A1BA3E23114EB782A9A65F /* r10_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3E0094AC04242D086724770 /* r10_logo@3x.png */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -452,14 +451,12 @@
 		EE25D990BFE14303A6839286 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		F18C9575F0B643708699B047 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Light.ttf"; path = "../assets/fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		F46EBC83F0D04080AF1630CE /* libRNVectorIcons-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNVectorIcons-tvOS.a"; sourceTree = "<group>"; };
-
 		80D3F31C89DC4741A3CA0A72 /* map_pin.png */ = {isa = PBXFileReference; name = "map_pin.png"; path = "../assets/images/map_pin.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		27F3C7FC0E6F4B4080464251 /* map_pin@2x.png */ = {isa = PBXFileReference; name = "map_pin@2x.png"; path = "../assets/images/map_pin@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3DBAA40DB5AF4FB892501C58 /* map_pin@3x.png */ = {isa = PBXFileReference; name = "map_pin@3x.png"; path = "../assets/images/map_pin@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E99A20A45FD0402A93E4E0EA /* r10_logo.png */ = {isa = PBXFileReference; name = "r10_logo.png"; path = "../assets/images/r10_logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E6C51D97C0724B5AA195A6D0 /* r10_logo@2x.png */ = {isa = PBXFileReference; name = "r10_logo@2x.png"; path = "../assets/images/r10_logo@2x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D3E0094AC04242D086724770 /* r10_logo@3x.png */ = {isa = PBXFileReference; name = "r10_logo@3x.png"; path = "../assets/images/r10_logo@3x.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
