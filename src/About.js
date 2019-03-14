@@ -44,19 +44,22 @@ class About extends Component {
             }
             return (
               <View>
-                <Image source={require('../assets/images/r10_logo.png')} />
+                <Image 
+                  style={styles.headingImage}
+                  source={require('../assets/images/r10_logo.png')} 
+                  />
                 <View
                   style={{
                     borderBottomColor: 'grey',
                     borderBottomWidth: 1,
                   }}
                 />
-                <Text>
+                <Text style={styles.contentText}>
                   R10 is a conference that focuses on just about any topic
                   related to dev.
                 </Text>
                 <Text style={styles.heading}>Date & Venue</Text>
-                <Text>
+                <Text style={styles.contentText}>
                   The R10 conference will take place on Tuesday, June 27, 2017
                   in Vancouver, BC.
                 </Text>
@@ -69,14 +72,14 @@ class About extends Component {
                     >
                       <CollapseHeader>
                         <View>
-                          <Text style={{ color: '#9963ea' }}>
+                          <Text style={styles.conductTitle}>
                             {this.state.collapsed === index ? '-' : '+'}{' '}
                             {element.title}
                           </Text>
                         </View>
                       </CollapseHeader>
                       <CollapseBody>
-                        <Text>{element.description}</Text>
+                        <Text style={styles.conductContent}>{element.description}</Text>
                       </CollapseBody>
                     </Collapse>
                   </View>
@@ -114,12 +117,35 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    fontFamily: "Montserrat-Regular"
+  },
+  headingImage: {
+    alignSelf: 'center',
+    margin: 20,
   },
   heading: {
     fontSize: 30,
+    fontFamily: "Montserrat-Regular",
+    margin: 10,
+  },
+  contentText: {
+    fontSize: 20,
+    fontFamily: "Montserrat-Light",
+    margin: 10,
   },
   dropdownMenu: {
     flex: 1,
     flexDirection: 'row',
   },
+  conductTitle: {
+    color: '#9963ea',
+    fontFamily: "Montserrat-Regular",
+    fontSize: 20,
+    margin: 10,
+  },
+  conductContent: {
+    fontFamily: "Montserrat-Light",
+    fontSize: 20,
+    margin: 10,
+  }
 });
