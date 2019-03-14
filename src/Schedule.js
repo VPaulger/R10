@@ -51,19 +51,6 @@ class Schedule extends Component {
                           />
                         </View>
                         {/* </Link> */}
-                        <Text style={styles.startTime}>
-                          {moment(session.startTime).format('LT')}
-                        </Text>
-                        <Text style={styles.title}>{session.title}</Text>
-                        <View style={styles.scheduleContainer}>
-                          <Text style={styles.location}>
-                            {session.location}
-                          </Text>
-                          <FavouriteIcon
-                            id={session.id}
-                            styles={styles.favIcon}
-                          />
-                        </View>
                       </View>
                     );
                   })}
