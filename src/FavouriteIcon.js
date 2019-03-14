@@ -37,8 +37,10 @@ export default class FavouriteIcon extends Component {
 
   async getIsFav(id) {
     try {
-      const favList = await AsyncStorage.getItem('favList');
-      return favList[id] || false;
+      const favListString = await AsyncStorage.getItem('favList');
+      const favListJSON = JSON.parse(favListString) || {};
+      const isFav = favListJSON[id] || false;
+      this.setState({ isFav });
     } catch (error) {
       console.log(error);
     }
@@ -48,19 +50,12 @@ export default class FavouriteIcon extends Component {
     this.getIsFav(this.state.id);
   }
 
-  displayIcon() {
-    if (this.state.isFav) {
-      return <Icon name="heart" size={20} color="red" />;
-    } else {
-      return <Icon name="heart-o" size={20} />;
-    }
-  }
-
   render() {
     return (
       <View style={this.props.styles}>
         <TouchableOpacity onPress={() => this.toggleFav(this.state.id)}>
-          {this.displayIcon()}
+          {this.state.isFav && <Icon name="heart" size={20} color="red" />}
+          {!this.state.isFav && <Icon name="heart-o" size={20} />}
         </TouchableOpacity>
       </View>
     );
