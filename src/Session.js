@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View, Image} from 'react-native'
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -54,16 +54,24 @@ class Session extends Component {
                     {console.log("loading status: ", loading)}
                     {console.log("data.Session: ", data.Session)}
                     
-                    <Text style={styles.location}>{data.Session.location}</Text>
-                    <Text h1 style={styles.title}>{data.Session.title}</Text>
-                    <Text style={styles.starttime}>{moment(data.Session.startTime).format('LT')}</Text>
-                    <Text style={styles.description}>{data.Session.description}</Text>
-                    <Text style={styles.presentedby}>Presented by</Text>
-                    <Image
-                      style={{width:80, height:80, borderRadius:40 }}
-                      source = {{uri: data.Session.speaker.image }}
-                    />
-                    <Text style={styles.name}>{data.Session.speaker.name}</Text>
+                    <Text style={[styles.base, styles.location]}>{data.Session.location}</Text>
+                    <Text h1 style={[styles.base, styles.title]}>{data.Session.title}</Text>
+                    <Text style={[styles.base, styles.starttime]}>{moment(data.Session.startTime).format('LT')}</Text>
+                    <Text style={[styles.base, styles.description]}>{data.Session.description}</Text>
+                    <Text style={[styles.base, styles.presentedby]}>Presented by</Text>
+                    <View style={styles.speaker}>
+                      <Image
+                        style={{width:80, height:80, borderRadius:40}}
+                        source = {{uri: data.Session.speaker.image }}
+                      />
+                      <Text style={[styles.base, styles.name]}>{data.Session.speaker.name}</Text>
+                    </View>
+                    <TouchableOpacity
+                      style={styles.button}
+                      onPress={this.onPress}
+                    >
+                      <Text style={[styles.base,{color: 'white'}]}> Remove from Faves </Text>
+                    </TouchableOpacity>
                 </View>
             )
           }}
@@ -80,14 +88,57 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'flex-start',
+    backgroundColor: 'white',
+    margin: 15,
+    
+  },
+  base: {
     fontFamily: "Montserrat-Regular",
+    fontSize: 20,
+    lineHeight: 40,
+    
   },
   session: {
-    fontFamily: "Montserrat-Regular",
+  },
+  location: {
+    color: '#999999',
+  },
+  title: {
+    fontSize: 35,
+    lineHeight: 60,
   },
   starttime: {
     color: 'red',
-  }
+  },
+  description: {
+    fontFamily: "Montserrat-Light",
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  speaker: {
+    display: "flex",
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 30,
+    borderBottomColor: '#E6E6E6',
+    borderBottomWidth: 2,
+  },
+  presentedby: {
+    color: '#999999',
+  },
+  name: {
+    paddingLeft: 10,
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#9963EA',
+    marginTop: 30,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginLeft: 30,
+    marginRight: 30,
+    borderRadius: 30,
+  },
 })
