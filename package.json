@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "accordion-collapse-react-native": "^0.1.9",
     "apollo-boost": "^0.3.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
@@ -27,5 +28,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }
