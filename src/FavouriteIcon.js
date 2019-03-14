@@ -37,12 +37,9 @@ export default class FavouriteIcon extends Component {
 
   async getIsFav(id) {
     try {
-      console.log('Starting');
       const favListString = await AsyncStorage.getItem('favList');
-      console.log('favListString: ', favListString);
       const favListJSON = JSON.parse(favListString) || {};
       const isFav = favListJSON[id] || false;
-      console.log('isFav: ', isFav);
       this.setState({ isFav });
     } catch (error) {
       console.log(error);
