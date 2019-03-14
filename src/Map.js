@@ -12,9 +12,6 @@ class Map extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Map</Text>
-        <Text>This is the map page :)</Text>
-
         <MapView
           initialRegion={{
             latitude: 43.644058,
