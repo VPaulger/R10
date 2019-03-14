@@ -19,6 +19,7 @@ class Schedule extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    let lastTime
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -34,12 +35,15 @@ class Schedule extends Component {
                 <View style={styles.list}>
                   {console.log('DATA>>>', data.allSessions[0])}
                   {data.allSessions.map(session => {
+                    const showSessionTime = lastTime !== session.startTime
+                    lastTime = session.startTime
                     return (
                       <View>
-                        {/* <Link onPress={() => navigate('SessionPage')}> */}
-                        <Text style={styles.startTime}>
-                          {moment(session.startTime).format('LT')}
-                        </Text>
+                        {showSessionTime && (
+                          <Text style={styles.startTime}>
+                            {moment(session.startTime).format('LT')}
+                          </Text>
+                        )}
                         <Text style={styles.title}>{session.title}</Text>
                         <View style={styles.scheduleContainer}>
                           <Text style={styles.location}>
@@ -51,19 +55,6 @@ class Schedule extends Component {
                           />
                         </View>
                         {/* </Link> */}
-                        <Text style={styles.startTime}>
-                          {moment(session.startTime).format('LT')}
-                        </Text>
-                        <Text style={styles.title}>{session.title}</Text>
-                        <View style={styles.scheduleContainer}>
-                          <Text style={styles.location}>
-                            {session.location}
-                          </Text>
-                          <FavouriteIcon
-                            id={session.id}
-                            styles={styles.favIcon}
-                          />
-                        </View>
                       </View>
                     );
                   })}
